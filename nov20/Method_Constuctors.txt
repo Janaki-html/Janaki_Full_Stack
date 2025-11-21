@@ -1,0 +1,53 @@
+package nov20;
+
+public class Method_Constructors {
+	public static void main(String[] args) {
+		
+		Calculator cal= new Calculator();
+		cal.add(3, 5);
+		cal.add(2.5, 5);
+		cal.add(1, 2, 3);
+		Son s=new Son();
+		s.Bike();
+		Student s1= new Student();
+		s1.details();
+		
+	}
+	
+}	
+// overloading
+	class GrandFather{
+		void Bike() {
+			System.out.println("Royal Enfield 1");
+		}
+	}
+	class Father{
+		void Bike() {
+			System.out.println("Royal Enfield 2");
+		}
+	}
+	class Son extends Father{
+		void Bike() {
+			System.out.println("Royal Enfield 3");
+		}
+	}
+	// overriding
+	class Calculator{
+		void add(int a,int b) {
+			System.out.println("Sum:"+(a+b));
+		}
+		void add(double a, int b) {
+			System.out.println("Sum"+(a+b));
+		}
+		void add(int a, int b, int c) {
+			System.out.println("Sum"+(a+b+c));
+		}
+		
+	}
+	//
+	class Student{
+		int regno=1;
+		void details() {
+			System.out.println("Reg.No is "+regno);
+		}
+	}
