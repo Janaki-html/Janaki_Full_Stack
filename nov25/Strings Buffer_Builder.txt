@@ -1,0 +1,52 @@
+package nov25;
+
+public class Buffer_Builder {
+	public static void main(String[] args) {
+		StringBuilder s=new StringBuilder("Sathyabama");
+		
+		//append
+		System.out.println(s.append(" College"));
+		
+		//replace
+		System.out.println(s.replace(1,3,"janaki"));
+		
+		//delete
+		System.out.println(s.delete(1, 3));
+		
+		//reverse
+		System.out.println(s.reverse());
+		
+		//insert
+		System.out.println(s.insert(1, "janaki"));
+		
+		//capacity
+		System.out.println(s.capacity());
+		
+		//length
+		System.out.println(s.length());
+		
+		//index
+		System.out.println(s.charAt(6));
+		
+		//indexOf
+		System.out.println(s.indexOf("j"));
+		
+		//Buffer and Builder Difference code
+		long startTime=System.currentTimeMillis();
+		
+		//Builder
+		StringBuilder s1=new StringBuilder("Sathayabama");
+		for(int i=0;i<=10000000;i++) {
+			s1.append(" College");
+		}
+		System.out.println("Finishing Time ="+(System.currentTimeMillis()-startTime)+"ms");
+		
+		//Buffer
+		StringBuffer s2=new StringBuffer("Sathyabama");
+		for(int i=0; i<10000000;i++) {
+			s2.append(" College");
+		}
+		System.out.println("Finishing Time ="+(System.currentTimeMillis()-startTime)+"ms");
+	}
+
+}
