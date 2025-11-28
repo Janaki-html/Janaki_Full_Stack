@@ -1,0 +1,204 @@
+package collections;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class ArrayList123 {
+	public static void main(String[] args) {
+		ArrayList<Integer> a = new ArrayList<Integer>();
+		a.add(1);
+		a.add(5);
+		a.remove(1);
+		
+		ArrayList<String> str1 = new ArrayList<String>();
+		str1.add("janaki N janaki");
+		str1.remove(0);
+		
+		
+		
+		
+
+		LinkedList<Integer> b = new LinkedList<Integer>();
+		b.add(1);
+		b.add(2);
+
+		LinkedList<String> str = new LinkedList<String>();
+		str.add("Janaki");
+		str.add("N");
+
+		LinkedList<Boolean> bool = new LinkedList<Boolean>();
+		bool.add(true);
+		bool.remove(true);
+		bool.add(false);
+
+		LinkedList<Character> chara = new LinkedList<Character>();
+		chara.add('A');
+		chara.remove(Character.valueOf('A'));
+		chara.add('Z');
+		
+		System.out.println(chara);
+		System.out.println(bool);
+		System.out.println(str);
+		System.out.println(b);
+		
+		
+
+
+	}
+
+}
+
+
+package collections;
+import java.util.*;
+public class Set_Map {
+	public static void main(String[] args) {
+		
+		//Hash_Set
+		//to check duplicates
+		HashSet<String> set=new HashSet<String>();  
+		set.add("Ravi");  
+		set.add("Vijay");  
+		set.add("Ravi");  
+		set.add("Ajay");
+		
+		//to check insertion order
+		HashSet<Integer> set1=new HashSet<Integer>();
+		set1.add(1);
+		set1.add(10);
+		set1.add(2);
+		
+		//to check null 
+		HashSet<Integer> set2=new HashSet<Integer>();
+		set2.add(1);
+		System.out.println(set2);
+		
+		Iterator <Integer> itr1= set1.iterator();
+		while(itr1.hasNext()) {
+			System.out.println(itr1.next());
+		}
+		
+		
+		Iterator<String> itr=set.iterator();  
+		while(itr.hasNext()){  
+		System.out.println(itr.next());  
+		}
+		
+		//Linked_Hash_Set
+		//to check duplicates
+		LinkedHashSet<String> lh = new LinkedHashSet<String>();
+		lh.add("RAVI");
+		lh.add("RAM");
+		lh.add("RAVI");
+		System.out.println(lh);
+		
+
+		//to check insertion order and sorting
+		LinkedList<String> lh1=new LinkedList<String>();
+		lh1.add("JANAKI");
+		lh1.add("ANU");
+		System.out.println(lh1);
+		
+		//to check null
+		LinkedList<String> lh2=new LinkedList<String>();
+		lh2.add(null);
+		System.out.println(lh2);
+		
+		//Tree_Set
+		//to check duplicates
+		TreeSet<String> ts=new TreeSet<String>();
+		ts.add("janaki");
+		ts.add("janaki");
+		System.out.println(ts);
+		
+		//to check insertion order and sorting
+		TreeSet<String> ts1=new TreeSet<String>();
+		ts1.add("Papin");
+		ts1.add("Janaki");
+		System.out.println(ts1);
+		
+		//to check null
+		TreeSet<String> ts2=new TreeSet<String>();
+		ts2.add("Janu");
+		ts2.add("janaki");
+		ts2.add("papin");
+		System.out.println(ts2);
+		
+		
+		
+	}
+
+}
+
+
+package collections;
+
+import java.util.*;
+
+public class Map {
+	public static void main(String args[]) {
+		
+		//Hash_Map
+		//to check insertion order
+		HashMap<Integer, String> map = new HashMap<Integer, String>();
+		map.put(1, "1"); 
+		map.put(4, "Apple");
+		map.put(3, "Banana");
+		map.put(2, "Grapes");
+		System.out.println(map);
+		
+		//to check duplicates
+		HashMap<Integer, String> map1 = new HashMap<Integer, String>();
+		map1.put(1, "1"); 
+		map1.put(4, "Apple");
+		map1.put(4, "Apple");
+		map1.put(2, "Grapes");
+		System.out.println(map1);
+		
+		//to check null
+		HashMap<Integer, String> map2 = new HashMap<Integer, String>();
+		map2.put(1, "1"); 
+		map2.put(4, null);
+		map2.put(null, "Banana");
+		map2.put(2, "Grapes");
+		System.out.println(map2);
+		
+		//Linked_Hash_Map
+		LinkedHashMap<Integer,String> lsm = new LinkedHashMap<Integer,String>();
+		lsm.put(1,"janaki");
+		lsm.put(2, "janu");
+		
+		//Tree_Map
+
+		TreeMap<Integer,String> tm= new TreeMap<Integer,String>();
+		tm.put(1, "1"); 
+		tm.put(4, "2");
+		tm.put(5, "Banana");
+		tm.put(2, "Grapes");
+		System.out.println(tm);
+	}
+}
+
+
+package CRUD;
+
+import java.sql.*;
+
+public class MysqlCon {
+	public static void main(String args[]) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver"); // Register
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "root");
+			// here sonoo is database name, root is username and password
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from student");
+			while (rs.next())
+				System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3) + rs.getInt(4) + " " + rs.getInt(5));
+			con.close();
+		} catch (Exception e) {
+			System.out.println("went wrong");
+		}
+	}
+
+}
