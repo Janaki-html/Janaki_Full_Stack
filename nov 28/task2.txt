@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Validation Demo</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image:url(back.jpg) ;
+        background-size: cover;       
+        background-repeat: no-repeat;  
+        background-position: center; 
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    form{
+        background-color: rgba(255, 192, 203, 0.58);
+        border: 1px solid black;
+        padding: 40px;
+        width: 350px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    label{
+        font-weight: bold;
+        display: block;
+        margin-top: 20px;
+    }
+    input {
+        padding: 8px;
+        margin-top: 10px;
+        width: 250px;
+        box-sizing: border-box;
+    }
+    button{
+        background-color: rgba(255, 0, 0, 0.274);
+        padding:10px;
+        width:100px;
+        margin-top:20px;
+        border: 1px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    input:invalid {
+    border: 2px solid #FF0000;
+    }
+</style>
+<body>
+   <form action="#" method="post">
+    <h2>User Login</h2>
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Enter username" minlength="6" required><br>
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Enter password" required>
+    <br>
+    <button type="submit">Submit</button>
+   </form>
+</body>
+</html>
